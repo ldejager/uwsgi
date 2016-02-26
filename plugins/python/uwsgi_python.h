@@ -1,4 +1,8 @@
 #include <uwsgi.h>
+/* seems like Python.h explicitlyl redefines _GNU_SOURCE */
+#ifdef _GNU_SOURCE
+#undef _GNU_SOURCE
+#endif
 #include <Python.h>
 
 #include <frameobject.h>
